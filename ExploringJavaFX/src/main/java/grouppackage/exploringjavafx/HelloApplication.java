@@ -17,14 +17,16 @@ public Button FirstBtn;
 public Button moreBtn;
 public BorderPane newWindow;
 public Group myGroup;
-
+public int min;
+public int max;
 
     @Override
     public void start(Stage stage) throws IOException {
         CreateContent();
-        CreateContentTest();
+        max = 700;
+        min = 50;
 
-        myGroup = new Group(FirstBtn,moreBtn);
+        myGroup = new Group(FirstBtn);
 
 
 
@@ -39,20 +41,23 @@ public Group myGroup;
     }
 public void CreateContent(){
 
+
     System.out.println("Is this updated?");
     newWindow = new BorderPane();
     FirstBtn = new Button ("New Button nice");
     FirstBtn.setText("Click this pls");
     FirstBtn.setTranslateX(300);
     FirstBtn.setTranslateY(60);
-    FirstBtn.setOnAction(e-> System.out.println("click"));
+    FirstBtn.setOnAction(e->     CreateContentTest());
 
 }
 public void CreateContentTest(){
-
-       moreBtn = new Button("ok");
-       moreBtn.setTranslateY(50);
-
+int randomX =  (int)Math.floor(Math.random()*(max-min+1)+min);
+int randomY = (int)Math.floor(Math.random()*(max-min+1)+min);
+    moreBtn = new Button("ok");
+    myGroup.getChildren().add(moreBtn);
+    moreBtn.setTranslateY(randomY);
+    moreBtn.setTranslateX(randomX);
 
        //  System.out.println(i);
 
