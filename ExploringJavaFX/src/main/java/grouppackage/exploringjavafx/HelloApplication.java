@@ -39,7 +39,7 @@ public Group myGroup;
     }
 public void CreateContent(){
 
-    System.out.println("Maria er sej");
+    System.out.println("Is this updated?");
     newWindow = new BorderPane();
     FirstBtn = new Button ("New Button nice");
     FirstBtn.setText("Click this pls");
